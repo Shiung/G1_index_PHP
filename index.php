@@ -373,6 +373,14 @@
 		</div>
 		<div class="section s6">
 			<div class="content6">	
+			<?php  
+				try{
+					require_once("connectBooks.php");
+					$sql = "select * from act where ACT_no=1";
+					$act = $pdo->query($sql);		
+					while($actRow=$act->fetch(PDO::FETCH_ASSOC)){						
+			?>
+
 				<h2>季節活動</h2>
 				<p>在MATCHES得到滿滿驚喜</p>
 				<div class="present-floor5"><img src="images/img_index/floor5.png">
@@ -381,36 +389,55 @@
 							<img src="images/img_index/action1.png">	
 						</div>
 						<div class="action1_back">
-							<h3>七夕情人節活動</h3>
-							<div class="actionNumberTitle1">報名人數:<span class="actionNumber1 an">50</span>/<span class="actionNumberLimit1 anl">80</span></div>
+							<h3><?php echo $actRow["ACT_name"]; ?></h3>
+							<div class="actionNumberTitle1">報名人數:<span class="actionNumber1 an">50</span>/<span class="actionNumberLimit1 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar1"><div class="controlBar1 cb"></div></div>
 							<div class="actionGo1"><a href="act.html">報名活動</a></div>
 						</div>
 					</div>
+			<?php
+				}
+				$sql = "select * from act where ACT_no=2";
+				$act = $pdo->query($sql);		
+				while($actRow=$act->fetch(PDO::FETCH_ASSOC)){		
+			?>
 					<div class="action2Box ab">
 						<div class="action2">
 							<img src="images/img_index/action2.png">
 						</div>
 						<div class="action2_back">
-							<h3>當月壽星活動</h3>
-							<div class="actionNumberTitle2">報名人數:<span class="actionNumber2 an">20</span>/<span class="actionNumberLimit2 anl">50</span></div>
+							<h3><?php echo $actRow["ACT_name"]; ?></h3>
+							<div class="actionNumberTitle2">報名人數:<span class="actionNumber2 an">20</span>/<span class="actionNumberLimit2 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar2"><div class="controlBar2 cb"></div></div>
 							<div class="actionGo2"><a href="act.html">報名活動</a></div>
 						</div>					
 					</div>
+			<?php
+				}
+				$sql = "select * from act where ACT_no=3";
+				$act = $pdo->query($sql);		
+				while($actRow=$act->fetch(PDO::FETCH_ASSOC)){		
+			?>
 					<div class="action3Box ab">
 						<div class="action3">	
 							<img src="images/img_index/action3.png">
 							
 						</div>
 						<div class="action3_back">
-							<h3>哈利波特週年活動</h3>
-							<div class="actionNumberTitle3">報名人數:<span class="actionNumber3 an">70</span>/<span class="actionNumberLimit3 anl">100</span></div>
+							<h3><?php echo $actRow["ACT_name"]; ?></h3>
+							<div class="actionNumberTitle3">報名人數:<span class="actionNumber3 an">70</span>/<span class="actionNumberLimit3 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar3"><div class="controlBar3 cb"></div></div>
 							<div class="actionGo3"><a href="act.html">報名活動</a></div>
 						</div>
 					</div>
 				</div>
+			<?php 
+				} 
+				}catch(PDOException $e){
+					echo "錯誤行號 :",  $ex->getLine(), "<br>";
+					echo "錯誤訊息 :", $ex->getMessage(), "<br>";
+				}
+			?>	
 			</div>
 			<div class="actBalloon1"><img src="images/img_index/balloon1.png"></div>
 			<div class="actBalloon2"><img src="images/img_index/balloon2.png"></div>
@@ -427,21 +454,21 @@
 				<section class="center slider">
 					<div>
 						<img src="images/img_index/action1.png">
-						<h3  class="rwdTit" style="display: none;">七夕情人節活動</h3>
+						<h3  class="rwdTit" style="display: none;"><!-- 七夕情人節活動 --></h3>
 						<div class="rwdCNum" style="display: none;">50</div>
-						<div class="rwdCLimt" style="display: none;">80</div>
+						<div class="rwdCLimt" style="display: none;"><!-- 80 --></div>
 					</div>
 					<div>
 						<img src="images/img_index/action2.png">
-						<h3 class="rwdTit" style="display: none;">當月壽星活動</h3>
+						<h3 class="rwdTit" style="display: none;"><!-- 當月壽星活動 --></h3>
 						<div class="rwdCNum" style="display: none;">20</div>
-						<div class="rwdCLimt" style="display: none;">50</div>
+						<div class="rwdCLimt" style="display: none;"><!-- 50 --></div>
 					</div>
 					<div>
 						<img src="images/img_index/action3.png">
-						<h3 class="rwdTit" style="display: none;">哈利波特週年活動</h3>
+						<h3 class="rwdTit" style="display: none;"><!-- 哈利波特週年活動 --></h3>
 						<div class="rwdCNum" style="display: none;">70</div>
-						<div class="rwdCLimt" style="display: none;">100</div>
+						<div class="rwdCLimt" style="display: none;"><!-- 100 --></div>
 					</div>
 				</section>
 				<div class="rwdContent">

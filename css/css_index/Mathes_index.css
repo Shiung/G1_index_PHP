@@ -1643,6 +1643,9 @@
 				height: 22px;
 				background-color: #f00;
 				border-radius: 20px;
+			/*	transform: scaleX(0);
+				transform-origin: 0% 50%;*/
+				transition: 1s ;
 			}
 
 			.s6 .content6 .present-floor5 .action1_back .actionGo1,.s6 .content6 .present-floor5  .action2_back .actionGo2,.s6 .content6 .present-floor5 .action3_back .actionGo3{
@@ -1720,6 +1723,12 @@
 			.s6 .content6 .present-floor5 .action2Box:hover .action2_back,
 			.s6 .content6 .present-floor5 .action3Box:hover .action3_back{
 				transform: perspective(1000px) rotateY(0deg);
+			}
+			.s6 .content6 .present-floor5 .action1Box:hover .action1_back .controlBar1,
+			.s6 .content6 .present-floor5 .action2Box:hover .action2_back .controlBar2,
+			.s6 .content6 .present-floor5 .action3Box:hover .action3_back .controlBar3{
+				/*transform: scaleX(1);*/
+				background-color: #00f;
 			}
 		}
 		@media screen and (max-width:1450px){

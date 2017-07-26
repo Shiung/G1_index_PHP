@@ -435,7 +435,7 @@ $(window).ready(function(){
 											$('.present1').animate({opacity:'0',},100,function(){
 												$('.present2').delay(100).animate({opacity:'1'},100,function(){
 													$('.present-fly').animate({left:'110vw'},1000,function(){
-														console.log("hello");
+														// console.log("hello");
 													});
 												});
 											});	
@@ -943,7 +943,7 @@ $(".sexcheck").click(function(){
 			var a=$('.an:eq('+e+')').text();
 			var b=$('.anl:eq('+e+')').text();
 			// console.log(a,b);
-			$('.cb:eq('+e+')').css("width",a/b*97+"%"); 
+			$('.cb:eq('+e+')').css("width",a/b*98+"%"); 
 		}
 	// ========rwd slick============
 	if($(window).width()<768){		
@@ -965,8 +965,21 @@ $(".sexcheck").click(function(){
 		$("#currentTitle").text(defaultA);
 		$(".rwdCurentNum").text(defaultB);
 		$(".rwdCurentLimit").text(defaultC);
-		$(".CNBarTrue").css("width",defaultB/defaultC*97+"%");
+		$(".CNBarTrue").css("width",defaultB/defaultC*98+"%");
 			// console.log(defaultA);
+		// =======活動rwd內容=============
+      	$('.rwdTit:eq(2)').text(defaultA); //slick有複製clone div所以有兩個 
+      	var defaultAB=$(".action2_back").children("h3").text();
+      	var defaultAC=$(".action3_back").children("h3").text();
+      	$('.rwdTit:eq(3)').text(defaultAB);
+      	$('.rwdTit:eq(4)').text(defaultAC);
+      		// console.log(defaultAB,defaultAC);
+      	var defaultCB=$(".action2_back").children(".actionNumberTitle2").children(".actionNumberLimit2").text();	
+      	var defaultCC=$(".action3_back").children(".actionNumberTitle3").children(".actionNumberLimit3").text();	
+		// console.log(defaultC,defaultCB,defaultCC);
+		$('.rwdCLimt:eq(2)').text(defaultC);
+		$('.rwdCLimt:eq(3)').text(defaultCB);
+		$('.rwdCLimt:eq(4)').text(defaultCC);
 
 			// =======活動進度條slick之後========
 		$(".center").on("afterChange",function(index){
@@ -977,7 +990,7 @@ $(".sexcheck").click(function(){
 			$("#currentTitle").text(a);
 			$(".rwdCurentNum").text(b);
 			$(".rwdCurentLimit").text(c);
-			$(".CNBarTrue").css("width",b/c*97+"%");
+			$(".CNBarTrue").css("width",b/c*98+"%");
 		})
 	}
 
