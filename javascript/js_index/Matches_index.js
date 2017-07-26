@@ -937,14 +937,25 @@ $(".sexcheck").click(function(){
 
 	}); //變裝結束
 
-	// ================活動進度條================
+	// ================活動進度條  靜態================
 	// console.log($('.an').text());
-		for(var e=0;e<$('.an').length;e++){
-			var a=$('.an:eq('+e+')').text();
-			var b=$('.anl:eq('+e+')').text();
-			// console.log(a,b);
-			$('.cb:eq('+e+')').css("width",a/b*98+"%"); 
-		}
+		// for(var e=0;e<$('.an').length;e++){
+		// 	var a=$('.an:eq('+e+')').text();
+		// 	var b=$('.anl:eq('+e+')').text();
+		// 	// console.log(a,b);
+		// 	$('.cb:eq('+e+')').css("width",a/b*98+"%"); 
+		// }
+	// ================活動進度條  動態================
+	if($(window).width()>767){
+		$(".ab").hover(function(){
+			aWidth=$(this).children("div[class$=back]").children("div[class^=actionBar]").children(".cb");
+			var a=$(this).children("div[class$=back]").children("div[class^=actionNumberTitle]").children(".an").text();
+			var b=$(this).children("div[class$=back]").children("div[class^=actionNumberTitle]").children(".anl").text();
+			aWidth.css("width",a/b*98+"%");
+		},function(){
+			aWidth.css("width","0");
+		});
+	}
 	// ========rwd slick============
 	if($(window).width()<768){		
 		$(".center").slick({
