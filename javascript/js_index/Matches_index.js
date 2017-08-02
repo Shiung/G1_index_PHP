@@ -306,12 +306,18 @@ $(window).ready(function(){
 							opacity:'1'
 						});
 						// console.log($(".dm").length);
-						for(var i=0 ;i< $(".dm").length; i++){
-						// console.log($(".dm")[i]);						
-							$(".dm:eq("+i+")").css({
-								opacity:'1',
-								transition:'.3s '+ 0.3*(i+1) +'s' 
-							});
+						// for(var i=0 ;i< $(".dm").length; i++){
+						// // console.log($(".dm")[i]);						
+						// 	$(".dm:eq("+i+")").css({
+						// 		opacity:'1',
+						// 		transition:'.3s '+ 0.3*(i+1) +'s' 
+						// 	});
+						// }
+
+						// ======討論區 按鈕選=========
+						for(var i=0 ;i< $(".ds").length; i++){
+							$(".ds:eq("+i+")").addClass("rotate"+(i+1));
+							$(".ds:eq("+i+")").delay(300*(i+1)).animate({opacity:'1'},0);
 						}
 
 						if($(".dc").css("top") == "0px"){

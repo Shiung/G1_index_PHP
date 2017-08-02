@@ -322,10 +322,10 @@
 						<div class="discussMessage2 dm"><img src="images/img_index/discussMessage2.png"></div>
 						<div class="discussMessage3 dm"><img src="images/img_index/discussMessage3.png"></div>
 						<div class="discussMessage4 dm"><img src="images/img_index/discussMessage4.png"></div> -->
-						<div class="discussSession1"><h3>熱門文章</h3></div>
-						<div class="discussSession2"><h3>交換禮物</h3></div>
-						<div class="discussSession3"><h3>新手分享</h3></div>
-						<div class="discussSession4"><h3>活動分享</h3></div>
+						<div class="discussSession1 ds"><h3>熱門文章</h3></div>
+						<div class="discussSession2 ds"><h3>交換禮物</h3></div>
+						<div class="discussSession3 ds"><h3>新手分享</h3></div>
+						<div class="discussSession4 ds"><h3>活動分享</h3></div>
 						<div class="person4"><img src="images/img_index/person4.png"></div>
 						<div class="person5"><img src="images/img_index/person5.png"></div>
 						<div class="discussContent1 dc">
@@ -354,19 +354,19 @@
 				
 				<!-- ===========rwd=================== -->
 				<section class="center slider rwdDiscuss">
-					<div>
+					<div class="rwdDisc1">
 						<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=1">
 						<h3>我是標題1</h3>
 						<p>本類辦法閲讀整理所在男性戰鬥指定配件內置男性戰鬥指定配件內置男性戰鬥指定配件內置</p>
 						<a href="">more</a>
 					</div>
-					<div>
+					<div class="rwdDisc2">
 						<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=2">
 						<h3>我是標題2</h3>
 						<p>男性戰鬥指定配件內置男性戰鬥指定配件內置男性戰鬥指定配件內置</p>
 						<a href="">more</a>
 					</div>
-					<div>
+					<div class="rwdDisc3">
 						<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=3">
 						<h3>我是標題3</h3>
 						<p>西部日誌課程股東列表</p>
