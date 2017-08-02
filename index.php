@@ -318,10 +318,14 @@
 						<div class="present-wheel-1"><img src="images/img_index/wheel-1.png"></div>
 						<div class="present-wheel-2"><img src="images/img_index/wheel-2.png"></div>
 						<div class="restRoom"><img src="images/img_index/restRoom.png"></div>
-						<div class="discussMessage1 dm"><img src="images/img_index/discussMessage1.png"></div>
+						<!-- <div class="discussMessage1 dm"><img src="images/img_index/discussMessage1.png"></div>
 						<div class="discussMessage2 dm"><img src="images/img_index/discussMessage2.png"></div>
 						<div class="discussMessage3 dm"><img src="images/img_index/discussMessage3.png"></div>
-						<div class="discussMessage4 dm"><img src="images/img_index/discussMessage4.png"></div>
+						<div class="discussMessage4 dm"><img src="images/img_index/discussMessage4.png"></div> -->
+						<div class="discussSession1"><h3>熱門文章</h3></div>
+						<div class="discussSession2"><h3>交換禮物</h3></div>
+						<div class="discussSession3"><h3>新手分享</h3></div>
+						<div class="discussSession4"><h3>活動分享</h3></div>
 						<div class="person4"><img src="images/img_index/person4.png"></div>
 						<div class="person5"><img src="images/img_index/person5.png"></div>
 						<div class="discussContent1 dc">

@@ -1376,6 +1376,89 @@
 			left: 1040px;
 			opacity:0;
 		}
+		.s5 .content5 .present-floor4 .discussSession1{
+			position: absolute;
+		    top: -50px;
+		    left: 600px;
+		    background-color: #fff;
+		    padding: 20px;
+		    border-radius: 50%;
+		}
+
+		/*======討論區按鈕 分類========*/
+		.s5 .content5 .present-floor4 .discussSession1:after{
+			content:'';
+			display: block;
+			width: 20px;
+    		height: 20px;
+	    	border-bottom: 0px solid transparent;
+		    border-left: 20px solid #fff;
+		    border-radius: 0 0 0 100%;
+		    position: absolute;
+		    bottom: -10px;
+		    left: 60px;
+		}
+		.s5 .content5 .present-floor4 .discussSession2{
+			position: absolute;
+		    top: -20px;
+			left: 1060px;
+		    background-color: #fff;
+		    padding: 20px;
+		    border-radius: 50%;
+		}
+		.s5 .content5 .present-floor4 .discussSession2:after{
+			content:'';
+			display: block;
+			width: 20px;
+    		height: 20px;
+	    	border-bottom: 0px solid transparent;
+		    border-right: 20px solid #fff;
+		    border-radius: 0 0 100% 0;
+		    position: absolute;
+		    bottom: -5px;
+    		left: 0px;
+		}
+		.s5 .content5 .present-floor4 .discussSession3{
+			position: absolute;
+		    top: -110px;
+			left: 665px;
+		    background-color: #fff;
+		    padding: 20px;
+		    border-radius: 50%;
+		}
+		.s5 .content5 .present-floor4 .discussSession3:after{
+			content:'';
+			display: block;
+			width: 20px;
+    		height: 20px;
+	    	border-bottom: 0px solid transparent;
+		    border-left: 20px solid #fff;
+		    border-radius: 0 0 0 100%;
+		    position: absolute;
+		    bottom: -10px;
+		    left: 40px;
+		}
+		.s5 .content5 .present-floor4 .discussSession4{
+			position: absolute;
+		    top: -90px;
+			left: 1045px;
+		    background-color: #fff;
+		    padding: 20px;
+		    border-radius: 50%;
+		}
+		.s5 .content5 .present-floor4 .discussSession4:after{
+			content:'';
+			display: block;
+			width: 20px;
+    		height: 20px;
+	    	border-bottom: 0px solid transparent;
+		    border-right: 20px solid #fff;
+		    border-radius: 0 0 100% 0;
+		    position: absolute;
+		    bottom: -5px;
+    		left: 0px;
+		}
+		/*======討論區按鈕 分類========*/
 		.s5 .content5 .discussArea{
 			position: absolute;
 			bottom: 15px;	
@@ -1491,10 +1574,32 @@
 				color:#FFA266;
 				display: inline-block;
 			}
+			/*=====討論區按鈕 分類========*/
+			.s5 .content5 .present-floor4 .discussSession1:after,.s5 .content5 .present-floor4 .discussSession2:after,.s5 .content5 .present-floor4 .discussSession3:after,.s5 .content5 .present-floor4 .discussSession4:after{
+				display: none;
+			}
+			.s5 .content5 .present-floor4 .discussSession1,.s5 .content5 .present-floor4 .discussSession2,.s5 .content5 .present-floor4 .discussSession3,.s5 .content5 .present-floor4 .discussSession4{
+			    left: 730px;
+			    top: -90px;
+			    border-radius: 10px;
+			    padding: 5px;
+			}
+			.s5 .content5 .present-floor4 .discussSession2{
+				left:810px;
+			}
+			.s5 .content5 .present-floor4 .discussSession3{
+				left:970px;
+			}
+			.s5 .content5 .present-floor4 .discussSession4{
+				left:890px;
+			}
 		}
 		@media screen  and (max-width:320px){
 			.s5 .rwdDiscuss{
-				top: -90px;
+				top: -50px;
+			}
+			.s5 .content5 .present-floor4 .discussSession1,.s5 .content5 .present-floor4 .discussSession2,.s5 .content5 .present-floor4 .discussSession3,.s5 .content5 .present-floor4 .discussSession4{
+				 top: -70px;
 			}
 		}
 		@media screen  and (max-width:1500px){
