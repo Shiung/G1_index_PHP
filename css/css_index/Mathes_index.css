@@ -1393,9 +1393,7 @@
 		    border-radius: 50%;
 		    cursor: pointer;
 		}
-		.s5 .content5 .present-floor4 .discussSession1:after{
-			content:'';
-			display: block;
+		.s5 .content5 .present-floor4 .discussSession1 .dsAfter1{
 			width: 20px;
     		height: 20px;
 	    	border-bottom: 0px solid transparent;
@@ -1415,9 +1413,7 @@
 		    border-radius: 50%;
 		    cursor: pointer;
 		}
-		.s5 .content5 .present-floor4 .discussSession2:after{
-			content:'';
-			display: block;
+		.s5 .content5 .present-floor4 .discussSession2 .dsAfter2{
 			width: 20px;
     		height: 20px;
 	    	border-bottom: 0px solid transparent;
@@ -1436,9 +1432,7 @@
 		    border-radius: 50%;
 		    cursor: pointer;
 		}
-		.s5 .content5 .present-floor4 .discussSession3:after{
-			content:'';
-			display: block;
+		.s5 .content5 .present-floor4 .discussSession3 .dsAfter3{
 			width: 20px;
     		height: 20px;
 	    	border-bottom: 0px solid transparent;
@@ -1457,9 +1451,7 @@
 		    border-radius: 50%;
 		    cursor: pointer;
 		}
-		.s5 .content5 .present-floor4 .discussSession4:after{
-			content:'';
-			display: block;
+		.s5 .content5 .present-floor4 .discussSession4 .dsAfter4{
 			width: 20px;
     		height: 20px;
 	    	border-bottom: 0px solid transparent;
@@ -1475,15 +1467,15 @@
 			}
 			.s5 .content5 .present-floor4 .discussSession1:hover,.s5 .content5 .present-floor4 .discussSession2:hover,.s5 .content5 .present-floor4 .discussSession3:hover,.s5 .content5 .present-floor4 .discussSession4:hover{
 				/*background-color: #FCAD6D;*/
-				color:#fff;
-				background-color: #666;
+				color:#f00;
+				/*background-color: #666;*/
 			}
-			.s5 .content5 .present-floor4 .discussSession1:hover:after,.s5 .content5 .present-floor4 .discussSession3:hover:after{
-				border-left: 20px solid #666;
+			/*.s5 .content5 .present-floor4 .discussSession1:hover > .dsAfter1,.s5 .content5 .present-floor4 .discussSession3:hover > .dsAfter3{
+				border-left: 20px solid #FCAD6D;
 			}
-			.s5 .content5 .present-floor4 .discussSession2:hover:after,.s5 .content5 .present-floor4 .discussSession4:hover:after{
-				border-right: 20px solid #666;
-			}
+			.s5 .content5 .present-floor4 .discussSession2:hover > .dsAfter2,.s5 .content5 .present-floor4 .discussSession4:hover > .dsAfter4{
+				border-right: 20px solid #FCAD6D;
+			}*/
 			.s5 .content5 .present-floor4 .rotate1{
 				animation: disRot .3s .3s forwards;
 			}
@@ -1504,6 +1496,8 @@
 			100%{transform: rotateZ(0deg);}
 		}
 		/*======討論區按鈕 分類========*/
+
+
 		.s5 .content5 .discussArea{
 			position: absolute;
 			bottom: 15px;	
@@ -1536,7 +1530,7 @@
 		div[class^="discussContent"]{
 			width: 360px;
 			/*height: 300px;*/
-			background-color: rgba(255,255,255,.8);
+			background-color: rgba(255,255,255,1);
 			position: absolute;
 			/*top: 165px;
 			left: 20%;*/
@@ -1551,9 +1545,21 @@
 			border-radius: 10px;
 			overflow: hidden;
 		}
+		div[class^="discussContent"] .acpic{
+			width: 360px;
+			height: 250px;
+			position: relative;
+			overflow: hidden;
+		}
 		div[class^="discussContent"] img{
 			max-width:360px;
-			width: 100%;	 
+			width: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			margin: auto;
 		}
 		div[class^="discussContent"] h4{
 			text-align: left;
@@ -1561,7 +1567,7 @@
 			color:#000;
 		}
 		div[class^="discussContent"] p{
-			color:#000;
+			color:#FCAD6D;
 			font-size: 15px;
 			text-align: left;
 			letter-spacing: 1px;
@@ -1620,7 +1626,7 @@
 				display: inline-block;
 			}
 			/*=====討論區按鈕 分類========*/
-			.s5 .content5 .present-floor4 .discussSession1:after,.s5 .content5 .present-floor4 .discussSession2:after,.s5 .content5 .present-floor4 .discussSession3:after,.s5 .content5 .present-floor4 .discussSession4:after{
+			.s5 .content5 .present-floor4 .discussSession1 .dsAfter1,.s5 .content5 .present-floor4 .discussSession2 .dsAfter2,.s5 .content5 .present-floor4 .discussSession3 .dsAfter3,.s5 .content5 .present-floor4 .discussSession4 .dsAfter4{
 				display: none;
 			}
 			.s5 .content5 .present-floor4 .discussSession1,.s5 .content5 .present-floor4 .discussSession2,.s5 .content5 .present-floor4 .discussSession3,.s5 .content5 .present-floor4 .discussSession4{
@@ -1655,6 +1661,16 @@
 				width: 260px;
 				margin-left: -150px;
 				left: 57%;
+			}
+			div[class^="discussContent"] .acpic{
+			width: 260px;
+			height: 200px;
+			position: relative;
+			overflow: hidden;
+			}
+			div[class^="discussContent"] img{
+			max-width:260px;
+			width: 100%;
 			}
 		}
 

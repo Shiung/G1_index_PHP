@@ -1,3 +1,7 @@
+<?php  
+ob_start();
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -324,33 +328,60 @@
 						<div class="discussMessage2 dm"><img src="images/img_index/discussMessage2.png"></div>
 						<div class="discussMessage3 dm"><img src="images/img_index/discussMessage3.png"></div>
 						<div class="discussMessage4 dm"><img src="images/img_index/discussMessage4.png"></div> -->
-						<div class="discussSession1 ds"><h3>熱門文章</h3></div>
-						<div class="discussSession2 ds"><h3>交換禮物</h3></div>
-						<div class="discussSession3 ds"><h3>新手分享</h3></div>
-						<div class="discussSession4 ds"><h3>活動分享</h3></div>
+						<div class="discussSession1 ds"><h3>熱門文章</h3><div class="dsAfter1"></div></div>
+						<div class="discussSession2 ds"><h3>交換禮物</h3><div class="dsAfter2"></div></div>
+						<div class="discussSession3 ds"><h3>新手分享</h3><div class="dsAfter3"></div></div>
+						<div class="discussSession4 ds"><h3>活動分享</h3><div class="dsAfter4"></div></div>
 						<div class="person4"><img src="images/img_index/person4.png"></div>
 						<div class="person5"><img src="images/img_index/person5.png"></div>
-						<div class="discussContent1 dc">
+						<?php  
+							try{
+								require_once('connectBooks.php');
+								$sql="select * from art order by ART_time desc";
+								$art=$pdo->query($sql);
+								
+								for($i=0;$i<3;$i++){
+									$artRow = $art->fetch(PDO::FETCH_ASSOC);								
+						?>
+						<div class="discussContent dc">
+							<a href="talk_02.php?ART_no=<?php echo $artRow["ART_no"]; ?>">
+								<div class="acpic"><img src="images/talk/<?php echo $artRow["ART_image"]; ?>"></div>
+								<h4><?php echo $artRow["ART_title"]; ?></h4>
+								<p>觀看更多內容</p>	
+							</a>
+						</div>
+						<?php
+								}
+							}catch(PDOException $e){
+								echo $e->getMessage();
+							}
+						?>
+						<!-- ===========測試=============== -->
+						<!-- <div class="discussContent1 dc">
 							<a href="">
-								<img src="https://api.fnkr.net/testimg/460x200/00CED1/FFF/?text=img+placeholder">
+								<div class="acpic"><img src="https://api.fnkr.net/testimg/460x300/00CED1/FFF/?text=img+placeholder"></div>
 								<h4>我是標題1</h4>
 								<p>本類辦法閲讀整理所在</p>
 							</a>
 						</div>
 						<div class="discussContent2 dc">
 							<a href="">
-								<img src="https://api.fnkr.net/testimg/460x200/00CED1/FFF/?text=img+placeholder">
+								<div class="acpic">
+									<img src="https://api.fnkr.net/testimg/460x300/00CED1/FFF/?text=img+placeholder">
+								</div>
 								<h4>我是標題2</h4>
 								<p>男性戰鬥指定配件內置男性戰鬥指定配件內置男性戰鬥指定配件內置</p>
 							</a>
 						</div>
 						<div class="discussContent3 dc">
 							<a href="">
-								<img src="https://api.fnkr.net/testimg/460x200/00CED1/FFF/?text=img+placeholder">
+								<div class="acpic">
+									<img src="https://api.fnkr.net/testimg/460x300/00CED1/FFF/?text=img+placeholder">
+								</div>
 								<h4>我是標題3</h4>
 								<p>西部日誌課程股東列表</p>
 							</a>
-						</div>
+						</div> -->
 				</div>
 				<div class="discussArea"><a href="talk.html">前往討論區</a></div>
 				

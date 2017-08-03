@@ -5,6 +5,9 @@ $(window).ready(function(){
 	var s4timer=0; // rwd 不使用full page s4觸動動畫
 	var s5timer=0; // rwd 不使用full page s4觸動動畫
 	var s7timer=0; // rwd 不使用full page s4觸動動畫
+
+   
+	var dsCount =0 ; //pc 板桌機討論區計時器
 	if($(window).width()>767){
 		$('#fullpage').fullpage({
 		  keyboardScrolling:true,
@@ -315,6 +318,7 @@ $(window).ready(function(){
 						// }
 
 						// ======討論區 按鈕選=========
+						dsCount =1; 
 						for(var i=0 ;i< $(".ds").length; i++){
 							$(".ds:eq("+i+")").addClass("rotate"+(i+1));
 							$(".ds:eq("+i+")").delay(300*(i+1)).animate({opacity:'1'},0);
@@ -322,15 +326,19 @@ $(window).ready(function(){
 
 						if($(".dc").css("top") == "0px"){
 							if($(window).width()>1499){
-								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'165px',left:'20%'},500,function(){
-									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'165px',left:'50%'},500,function(){
-										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'165px',left:'80%'},500)
+								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'70px',left:'20%'},400,function(){
+									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'70px',left:'50%'},400,function(){
+										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'70px',left:'80%'},400,function(){
+											dsCount =0; 
+										})
 									})
 								});
 							}else{
-								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'100px',left:'25%'},500,function(){
-									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'100px',left:'50%'},500,function(){
-										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'100px',left:'75%'},500)
+								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'50px',left:'25%'},400,function(){
+									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'50px',left:'50%'},400,function(){
+										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'50px',left:'75%'},400,function(){
+											dsCount =0;
+										})
 									})
 								});
 							}
@@ -695,12 +703,100 @@ if($(window).width()>767){
 					$(".s1-friendship6").css({top:"0",left:"",opacity:"0"});
 				});
 
-	// ======討論區 按鈕選=========
+	// ======討論區 按鈕選 pc========
 	$(".ds").click(function(){
-		$(".ds").not($(this)).css({backgroundColor:"#fff",color:"#666"});
-		$(this).css({backgroundColor:"#666",color:"#fff"});
+		if(dsCount ==0){
+			dsCount =1;
+			$(".ds").not($(this)).css("color","#666");
+			// $(".ds").eq(0).children('div').not($(this)).css("borderLeft","20px solid #fff");
+			// $(".ds").eq(2).children('div').not($(this)).css("borderLeft","20px solid #fff");
+			// $(".ds").eq(1).children('div').not($(this)).css("borderRight","20px solid #fff");
+			// $(".ds").eq(3).children('div').not($(this)).css("borderRight","20px solid #fff");
+			$(this).css("color","#f00");		
+			// console.log($(this),$(this).children("h3").text());
+			// if($(this).children("h3").text() == "熱門文章" || $(this).children("h3").text() == "新手分享"){
+			// 	$(this).children('div').css("borderLeft","20px solid #666");
+			// }else{
+			// 	$(this).children('div').css("borderRight","20px solid #666");
+			// }
+			if($(window).width()>1499){
+				$('.dc:eq(0)').animate({width:'toggle',height:'toggle',top:"0",left:"60%"},0,function(){
+					$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:"0",left:"60%"},0,function(){
+						$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:"0",left:"60%"},0,function(){
+							$('.dc:eq(0)').animate({width:'toggle',height:'toggle',top:'70px',left:'20%'},400,function(){
+								$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'70px',left:'50%'},400,function(){
+									$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'70px',left:'80%'},400,function(){
+										dsCount =0;
+									})
+								});
+							});
+						});
+					});	
+				});
+				
+			}else{
+				$('.dc:eq(0)').animate({width:'toggle',height:'toggle',top:'0',left:'57%'},0,function(){
+					$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'0',left:'57%'},0,function(){
+						$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'0',left:'57%'},0,function(){
+							$('.dc:eq(0)').animate({width:'toggle',height:'toggle',top:'50px',left:'25%'},400,function(){
+								$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'50px',left:'50%'},400,function(){
+									$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'50px',left:'75%'},400,function(){
+										dsCount =0;
+									})
+								})
+							});
+						})
+					})
+				});
+				
+			}
+			console.log($(this).children('h3').text());
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange= function(){
+				if( xhr.readyState == 4){ //Server端做完了
+			        if( xhr.status == 200){ //正確執行完畢
+						// var XML = xhr.responseXML;
+						// alert(xhr.responseText);
+						// alert(xhr.responseXML.documentElement.childNodes[0].firstChild.nodeValue);
+						var xml = xhr.responseXML;
+						$(".dc").eq(0).children().children('h4').text(xml.documentElement.childNodes[0].firstChild.nodeValue);
+						$(".dc").eq(0).children().children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[1].firstChild.nodeValue);
+						$(".dc").eq(0).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[2].firstChild.nodeValue);
+						$(".dc").eq(1).children().children('h4').text(xml.documentElement.childNodes[3].firstChild.nodeValue);
+						$(".dc").eq(1).children().children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[4].firstChild.nodeValue);
+						$(".dc").eq(1).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[5].firstChild.nodeValue);
+						$(".dc").eq(2).children().children('h4').text(xml.documentElement.childNodes[6].firstChild.nodeValue);
+						$(".dc").eq(2).children().children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[7].firstChild.nodeValue);
+						$(".dc").eq(2).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[8].firstChild.nodeValue);
+			        }else{  
+			          alert( xhr.status);
+			        }
+			    }else{
+			    	// alert(xhr.readyState);
+			    }
+			}
+			var data_info = "ART_type=" + $(this).children('h3').text();
+		    var url = "index_discus.php";
+		    xhr.open("Post",url,true);
+		    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");  //使用post傳送時一定要加 
+		    xhr.send(data_info);
+
+		}//計時器結束		
 	});
-}			
+
+}else{
+	// ======討論區 按鈕選 rwd========
+
+	$(".ds").click(function(){
+		$(".ds").not($(this)).css("color","#666");
+		$(this).css("color","#f00");
+	});
+}
+
+
+
+
+
 // =======================視差====================
 			if($(window).width()>767){  //pc板使用
 				$(".s2").on('mousemove',function(e){
