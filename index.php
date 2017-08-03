@@ -164,7 +164,7 @@ session_start();
 					<div class="s1-friendship6"><img src="images/img_index/discussMessage4.png"></div>
 					<div class="s1-friendship7"><img src="images/img_index/friendship3.png"></div>
 				</div>
-				<div class="signIn"><a href="register.html">立即加入</a></div>   
+				<div class="signIn"><a href="register.php">立即加入</a></div>   
 			</div>
 			<div class="bubbleArea1">
 				<div class="bubble"><img src="images/img_index/bubble.png"></div>
@@ -195,7 +195,7 @@ session_start();
 					</div>	
 					<div class="personHover">
 						<p>加入Matches吧!!!</p>
-						<a href="register.html">GO</a>
+						<a href="register.php">GO</a>
 					</div>
 				</div>
 				<div class="present-cloud1 parallax" data-offset="10"><img src="images/img_index/cloud1.png"></div>
@@ -261,14 +261,14 @@ session_start();
 				</div>
 				<div class="person2Hover">
 						<p>加入Matches吧!!!</p>
-						<a href="register.html">GO</a>
+						<a href="register.php">GO</a>
 				</div>
 				</div>
 				<div class="car"><img src="images/img_index/car.png">
 					<div class="person2-present1"><img src="images/img_index/present1.png"></div>
 				</div>
 				<div class="person2-bird"></div>
-				<div class="exchagePresent"><a href="exchange.html">參加交換禮物</a></div>
+				<div class="exchagePresent"><a href="exchange.php">參加交換禮物</a></div>
 			</div>
 		</div>
 		<div class="section s4">
@@ -294,7 +294,7 @@ session_start();
 					<div class="dressing-door9"><img src="images/img_index/dressing-door9.png"></div>
 					<div class="person3"><img src="images/img_index/person3.png"></div>
 				</div>
-				<div class="dressDoll"><a href="shop.html">打造我的專屬娃娃</a></div>
+				<div class="dressDoll"><a href="shop.php">打造我的專屬娃娃</a></div>
 				<div class="changeDress">
 					<div class="person-w sexcheck" data-check="1"><img src="images/img_index/person_w.png"></div>
 					<p>幫你的專屬角色換換衣服吧</p>
@@ -352,11 +352,8 @@ session_start();
 						</div>
 						<?php
 								}
-							}catch(PDOException $e){
-								echo $e->getMessage();
-							}
 						?>
-						<!-- ===========測試=============== -->
+						<!-- ===========未動態抓取資料=============== -->
 						<!-- <div class="discussContent1 dc">
 							<a href="">
 								<div class="acpic"><img src="https://api.fnkr.net/testimg/460x300/00CED1/FFF/?text=img+placeholder"></div>
@@ -383,10 +380,32 @@ session_start();
 							</a>
 						</div> -->
 				</div>
-				<div class="discussArea"><a href="talk.html">前往討論區</a></div>
+				<div class="discussArea"><a href="talk.php">前往討論區</a></div>
 				
 				<!-- ===========rwd=================== -->
 				<section class="center slider rwdDiscuss">
+				<?php  
+					require_once('connectBooks.php');
+					$sql="select * from art order by ART_time desc";
+					$art=$pdo->query($sql);
+					for($i=0;$i<3;$i++){
+						$artRow = $art->fetch(PDO::FETCH_ASSOC);
+				?>
+				
+					<div class="rwdDisc">
+						<div class="imgBox"><img src="images/talk/<?php echo $artRow["ART_image"]; ?>"></div>
+						<p><?php echo $artRow["ART_title"]; ?></p>
+						<a href="talk_02.php?ART_no=<?php echo $artRow["ART_no"]; ?>">more</a>
+					</div>
+				<?php
+					}
+					}catch(PDOException $e){
+						echo $e->getMessage();
+					}
+				?>
+				</section>
+				<!-- ======= 未動態抓取資料======= -->
+				<!-- <section class="center slider rwdDiscuss">
 					<div class="rwdDisc1">
 						<img src="https://api.fnkr.net/testimg/350x200/00CED1/FFF/?text=1">
 						<h3>我是標題1</h3>
@@ -405,7 +424,7 @@ session_start();
 						<p>西部日誌課程股東列表</p>
 						<a href="">more</a>
 					</div>
-				</section>
+				</section> -->
 			</div>	
 		</div>
 		<div class="section s6">
@@ -429,7 +448,7 @@ session_start();
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
 							<div class="actionNumberTitle1">報名人數:<span class="actionNumber1 an">50</span>/<span class="actionNumberLimit1 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar1"><div class="controlBar1 cb"></div></div>
-							<div class="actionGo1"><a href="act.html">報名活動</a></div>
+							<div class="actionGo1"><a href="act.php">報名活動</a></div>
 						</div>
 					</div>
 			<?php
@@ -446,7 +465,7 @@ session_start();
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
 							<div class="actionNumberTitle2">報名人數:<span class="actionNumber2 an">20</span>/<span class="actionNumberLimit2 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar2"><div class="controlBar2 cb"></div></div>
-							<div class="actionGo2"><a href="act.html">報名活動</a></div>
+							<div class="actionGo2"><a href="act.php">報名活動</a></div>
 						</div>					
 					</div>
 			<?php
@@ -464,7 +483,7 @@ session_start();
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
 							<div class="actionNumberTitle3">報名人數:<span class="actionNumber3 an">70</span>/<span class="actionNumberLimit3 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar3"><div class="controlBar3 cb"></div></div>
-							<div class="actionGo3"><a href="act.html">報名活動</a></div>
+							<div class="actionGo3"><a href="act.php">報名活動</a></div>
 						</div>
 					</div>
 				</div>
@@ -512,7 +531,7 @@ session_start();
 					<h3 id="currentTitle">當月壽星活動</h3>
 					<div class="rwdPeople">報名人數:<span class="rwdCurentNum">20</span>/<span class="rwdCurentLimit">50</span></div>
 					<div class="CNBar"><div class="CNBarTrue"></div></div>
-					<a href="act.html">報名活動</a>
+					<a href="act.php">報名活動</a>
 				</div>	
 			</div>	
 		</div>

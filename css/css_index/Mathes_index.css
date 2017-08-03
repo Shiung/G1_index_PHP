@@ -1616,9 +1616,10 @@
 			.s5 .rwdDiscuss>div>div>div>p{
 				color:#000;
 				font-size: 15px;
-				text-align: left;
+				text-align: center;
 				letter-spacing: 1px;
 				margin-top: 10px;
+				line-height: 20px;
 			}
 			.s5 .rwdDiscuss>div>div>div>a{
 				margin-top: 10px;
@@ -1646,6 +1647,22 @@
 			}
 			.s5 .content5 .present-floor4 .discussSession4{
 				left:893px;
+			}
+			.imgBox{
+				width: 170px;
+				height: 150px;
+				position: relative;
+				overflow: hidden;
+			}
+			.imgBox img{
+				max-width:170px;
+				width: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				left: 0;
+				margin: auto;
 			}
 		}
 		@media screen  and (max-width:320px){

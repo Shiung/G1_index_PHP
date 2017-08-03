@@ -318,29 +318,31 @@ $(window).ready(function(){
 						// }
 
 						// ======討論區 按鈕選=========
-						dsCount =1; 
-						for(var i=0 ;i< $(".ds").length; i++){
-							$(".ds:eq("+i+")").addClass("rotate"+(i+1));
-							$(".ds:eq("+i+")").delay(300*(i+1)).animate({opacity:'1'},0);
-						}
+						if($(".ds").css("opacity") == 0){
+							dsCount =1; 
+							for(var i=0 ;i< $(".ds").length; i++){
+								$(".ds:eq("+i+")").addClass("rotate"+(i+1));
+								$(".ds:eq("+i+")").delay(300*(i+1)).animate({opacity:'1'},0);
+							}
 
-						if($(".dc").css("top") == "0px"){
-							if($(window).width()>1499){
-								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'70px',left:'20%'},400,function(){
-									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'70px',left:'50%'},400,function(){
-										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'70px',left:'80%'},400,function(){
-											dsCount =0; 
+							if($(".dc").css("top") == "0px"){
+								if($(window).width()>1499){
+									$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'70px',left:'20%'},400,function(){
+										$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'70px',left:'50%'},400,function(){
+											$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'70px',left:'80%'},400,function(){
+												dsCount =0; 
+											})
 										})
-									})
-								});
-							}else{
-								$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'50px',left:'25%'},400,function(){
-									$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'50px',left:'50%'},400,function(){
-										$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'50px',left:'75%'},400,function(){
-											dsCount =0;
+									});
+								}else{
+									$('.dc:eq(0)').delay(1500).animate({width:'toggle',height:'toggle',top:'50px',left:'25%'},400,function(){
+										$('.dc:eq(1)').animate({width:'toggle',height:'toggle',top:'50px',left:'50%'},400,function(){
+											$('.dc:eq(2)').animate({width:'toggle',height:'toggle',top:'50px',left:'75%'},400,function(){
+												dsCount =0;
+											})
 										})
-									})
-								});
+									});
+								}
 							}
 						}
 					}else{ //rwd
@@ -750,7 +752,7 @@ if($(window).width()>767){
 				});
 				
 			}
-			console.log($(this).children('h3').text());
+			// console.log($(this).children('h3').text());
 			var xhr=new XMLHttpRequest();
 			xhr.onreadystatechange= function(){
 				if( xhr.readyState == 4){ //Server端做完了
@@ -790,6 +792,48 @@ if($(window).width()>767){
 	$(".ds").click(function(){
 		$(".ds").not($(this)).css("color","#666");
 		$(this).css("color","#f00");
+		var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange= function(){
+				if( xhr.readyState == 4){ //Server端做完了
+			        if( xhr.status == 200){ //正確執行完畢
+						// var XML = xhr.responseXML;
+						// alert(xhr.responseText);
+						// alert(xhr.responseXML.documentElement.childNodes[0].firstChild.nodeValue);
+						var xml = xhr.responseXML;
+						// console.log($(".rwdDisc").eq(4).children('p').text());
+						$(".rwdDisc").eq(2).children('p').text(xml.documentElement.childNodes[0].firstChild.nodeValue);
+						$(".rwdDisc").eq(2).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[1].firstChild.nodeValue);
+						$(".rwdDisc").eq(2).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[2].firstChild.nodeValue);
+						$(".rwdDisc").eq(5).children('p').text(xml.documentElement.childNodes[0].firstChild.nodeValue);
+						$(".rwdDisc").eq(5).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[1].firstChild.nodeValue);
+						$(".rwdDisc").eq(5).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[2].firstChild.nodeValue);
+						$(".rwdDisc").eq(3).children('p').text(xml.documentElement.childNodes[3].firstChild.nodeValue);
+						$(".rwdDisc").eq(3).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[4].firstChild.nodeValue);
+						$(".rwdDisc").eq(3).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[5].firstChild.nodeValue);
+						$(".rwdDisc").eq(0).children('p').text(xml.documentElement.childNodes[3].firstChild.nodeValue);
+						$(".rwdDisc").eq(0).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[4].firstChild.nodeValue);
+						$(".rwdDisc").eq(0).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[5].firstChild.nodeValue);
+						$(".rwdDisc").eq(6).children('p').text(xml.documentElement.childNodes[3].firstChild.nodeValue);
+						$(".rwdDisc").eq(6).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[4].firstChild.nodeValue);
+						$(".rwdDisc").eq(6).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[5].firstChild.nodeValue);
+						$(".rwdDisc").eq(4).children('p').text(xml.documentElement.childNodes[6].firstChild.nodeValue);
+						$(".rwdDisc").eq(4).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[7].firstChild.nodeValue);
+						$(".rwdDisc").eq(4).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[8].firstChild.nodeValue);
+						$(".rwdDisc").eq(1).children('p').text(xml.documentElement.childNodes[6].firstChild.nodeValue);
+						$(".rwdDisc").eq(1).children().children("img").attr("src","images/talk/"+xml.documentElement.childNodes[7].firstChild.nodeValue);
+						$(".rwdDisc").eq(1).children('a').attr("href","talk_02.php?ART_no="+xml.documentElement.childNodes[8].firstChild.nodeValue);
+			        }else{  
+			          alert( xhr.status);
+			        }
+			    }else{
+			    	// alert(xhr.readyState);
+			    }
+			}
+			var data_info = "ART_type=" + $(this).children('h3').text();
+		    var url = "index_discus.php";
+		    xhr.open("Post",url,true);
+		    xhr.setRequestHeader("content-type","application/x-www-form-urlencoded");  //使用post傳送時一定要加 
+		    xhr.send(data_info);
 	});
 }
 
