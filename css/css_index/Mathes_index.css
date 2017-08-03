@@ -552,6 +552,7 @@
 			}
 			.present-cloud1{
 				margin-left: -350px;
+				display: none;
 			}
 			.present-cloud1 img{
 				width: 700px;
@@ -899,6 +900,9 @@
 				height: 100vh;
 				position: relative;
 			}
+			.s3 .content3 .present-cloud4{
+				display: none;
+			}
 			.s3 .content3 .present-cloud5 img {
 			    width: 400px;
 			    margin-left: -200px;
@@ -1166,6 +1170,7 @@
 			}
 			.s4 .content4 .present-cloud6{
 				top: 60vh;	
+				display: none;
 			}
 			.s4 .content4 .present-floor3>img{
 				width: 100%;	

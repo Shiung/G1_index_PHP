@@ -590,7 +590,7 @@ $(window).ready(function(){
 
 
 if($(window).width()>767){
-// ====================S1人物動畫====================
+	// ====================S1人物動畫====================
 				$(".style6").hover(function(){
 					// console.log($(this).parent());
 					$(this).parent().css("animation-play-state",'paused');
@@ -620,7 +620,7 @@ if($(window).width()>767){
 					$(".style5").css({top:"0px",left:""});
 				});
 
-// ====================S1禮物動畫====================
+	// ====================S1禮物動畫====================
 			$(".s1-present10").hover(function(){
 					// console.log($(this).parent());
 					$(this).parent().css("animation-play-state",'paused');
@@ -667,7 +667,7 @@ if($(window).width()>767){
 					$(".s1-present8").css({top:"0",left:""});
 					$(".s1-present9").css({top:"0",left:""});
 				});
-// ====================S1交友動畫====================
+	// ====================S1交友動畫====================
 				$(".s1-friendship7").hover(function(){
 					// console.log($(this).parent());
 					$(this).parent().css("animation-play-state",'paused');
@@ -694,7 +694,13 @@ if($(window).width()>767){
 					$(".s1-friendship5").css({top:"0",left:"",opacity:"0"});
 					$(".s1-friendship6").css({top:"0",left:"",opacity:"0"});
 				});
-}				
+
+	// ======討論區 按鈕選=========
+	$(".ds").click(function(){
+		$(".ds").not($(this)).css({backgroundColor:"#fff",color:"#666"});
+		$(this).css({backgroundColor:"#666",color:"#fff"});
+	});
+}			
 // =======================視差====================
 			if($(window).width()>767){  //pc板使用
 				$(".s2").on('mousemove',function(e){
@@ -787,7 +793,7 @@ $(".sexcheck").click(function(){
 				$(".woman").slideDown(300);
 				$(".person3 img").attr("src","images/img_index/person3.png");
 			}else{
-				alert("可以切換男生唷!!!");
+				swal("可以切換男生唷!!!");
 			}
 		}else{
 			if($(".man").css("display") == "none"){
@@ -796,12 +802,12 @@ $(".sexcheck").click(function(){
 				$(".man").slideDown(300);
 				$(".person3 img").attr("src","images/img_index/person3-2.png");
 			}else{
-				alert("可以切換女生唷!!!");
+				swal("可以切換女生唷!!!");
 			}
 		}
 		count=0; //讓換人可以正常執行完畢
 	}else{
-		alert('別急人家還在換衣服');
+		swal("別急人家還在換衣服");
 	}
 });	
 
@@ -887,7 +893,7 @@ $(".sexcheck").click(function(){
 				});//人物移動到衣櫥
 			}
 		}else{
-			alert('別急!!!人家還在換衣服');
+			swal('別急!!!人家還在換衣服');
 		}
 		
 		// ==============================窗簾 開門第二次換完衣服出來==========================

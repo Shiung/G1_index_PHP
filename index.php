@@ -9,6 +9,7 @@
 	<script src="javascript/js_index/examples.js"></script>
 	<script src="javascript/js_index/Matches_index.js"></script>
 	<script src="javascript/js_index/slick.js"></script>
+	<script src="javascript/js_index/sweetalert-dev.js"></script>
 	<!-- ========/index================= -->
 	<!-- ============header=================== -->
 	<script src="javascript/script.js"></script>
@@ -28,6 +29,7 @@
 	<link rel="stylesheet" type="text/css" href="css/css_index/Mathes_index.css">
 	<link rel="stylesheet" type="text/css" href="css/css_index/slick.css">
   	<link rel="stylesheet" type="text/css" href="css/css_index/slick-theme.css">
+  	<link rel="stylesheet" type="text/css" href="css/css_index/sweetalert.css">
   	<!-- =========/index============ -->
 	<title>Matches</title>
 </head>
