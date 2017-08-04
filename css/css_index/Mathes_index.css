@@ -56,6 +56,10 @@
 				display: none;
 			}
 		}
+		/*=====header========*/
+		.headerb{
+			display: none;
+		}
 		/*======================背景色==========================================*/
 		.s1{
 			background-image:linear-gradient(180deg,rgba(104,167,250,1) 0%,rgba(103,247,249,1) 100%);
@@ -1285,6 +1289,7 @@
 			left: 50%;
 			margin-left: -900px;
 			z-index: 1;
+			opacity: 0;
 		}
 		.s5 .content5 .present-cloud8 img{
 			width: 1800px;
