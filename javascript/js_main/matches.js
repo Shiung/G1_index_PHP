@@ -27,4 +27,23 @@ $(document).ready(function(){
 		});
 	});
 
+	$(".entryButton").hover(function(){
+		$(this).css({animationPlayState: "paused"});
+	},function(){
+		$(this).css({animationPlayState: "running"});
+	});
+
+	$(".logoBack").click(function(){
+		var a =$(this).children('img').attr("src");
+		// console.log(a.match("night"),a.match("sun"));
+		if(a.match("night") != null){
+			$(".matches").css("backgroundImage","linear-gradient(to bottom, #473657, #3195e8)");
+			$(this).children('img').attr("src","images/matches/sun.png");
+		}else{
+			$(".matches").css("backgroundImage","linear-gradient(to bottom, #2caeff, #69ffb7)");
+			$(this).children('img').attr("src","images/matches/night.png");
+		}
+	});
+
+
 });
