@@ -1,0 +1,34 @@
+.matches{
+	background-image: linear-gradient(to bottom, #2caeff, #69ffb7);
+	margin: auto;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	position: relative;
+}
+
+.matches_cloud{
+	width:100%;
+	position: fixed;
+	bottom:0px;
+}
+.matches_cloud img{
+	width:100%;
+}
+.matches_logo{
+	margin:auto;
+	position: absolute;
+	top:20%;
+	left:0px;
+	right:0px;
+	background-color: #fff;
+	width: 150px;
+	height:150px;
+	border-radius: 50%;
+	line-height: 150px;
+}
+.matches_logo img{
+	line-height: 150px;
+	vertical-align: middle;
+	width: 60%;
+}
