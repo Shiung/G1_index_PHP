@@ -17,54 +17,17 @@
 .matches_cloud img{
 	width:100%;
 }
-.logoBox{
+.matches_logo{
+	margin:auto;
 	position: absolute;
 	top:20%;
 	left:0px;
 	right:0px;
-	margin:auto;
-	width: 150px;
-	height:150px;
-	border-radius: 50%;
-}
-.matches_logo{
-	/*margin:auto;*/
-	position: absolute;
-	top:0;
-	/*left:0px;
-	right:0px;*/
 	background-color: #fff;
 	width: 150px;
 	height:150px;
 	border-radius: 50%;
 	line-height: 150px;
-	transform: rotateY(0deg);
-    backface-visibility: hidden;
-    transition: 1s;
-}
-.logoBack{
-	width: 100%;
-	height: 100%;
-	background-color: #f00;
-	border-radius: 50%;
-	position: absolute;
-	overflow: hidden;
-	top: 0px;
-	left: 0;
-	transform: rotateY(-180deg);
-	backface-visibility: hidden;
-	transition: 1s;
-	cursor: pointer;
-}
-.logoBack img{
-	width: 150px;
-	height: 150px;
-}
-.logoBox:hover >.matches_logo{
-	transform: rotateY(180deg);
-}
-.logoBox:hover > .logoBack{
-	transform: rotateY(0deg);
 }
 .matches_logo img{
 	line-height: 150px;
@@ -251,7 +214,9 @@
     transform-origin: 50% 0;
     transform: rotateZ(0deg);
 	background-image: url("../../images/matches/star1.png");
+	background-size: cover;
 	animation: starRotate 5s  infinite alternate;
+	display: none;
 }
 .star2{
 	width: 84px;
@@ -277,8 +242,171 @@
 	background-image: url("../../images/matches/star4.png");
 	animation: starRotate 5s   infinite alternate;
 }
+.toy1,.toy2,.toy3,.toy4{
+	width: 60px;
+	height: 170px;
+	position: absolute;
+    top: 0;
+    left: 35%;
+    transform-origin: 50% 0;
+    transform: rotateZ(0deg);
+	background-image: url("../../images/matches/toy1.png");
+	background-size: cover;
+	animation: starRotate 5s  infinite alternate;
+}
+.toy2{
+	width: 111px;
+	height: 200px;
+    left: 60%;
+    transform: rotateZ(0deg);
+	background-image: url("../../images/matches/toy2.png");
+	animation: starRotate 5s -2.5s  infinite alternate;
+}
+.toy3{
+	width: 60px;
+	height: 230px;
+    left: 90%;
+    transform: rotateZ(0deg);
+	background-image: url("../../images/matches/toy3.png");
+	animation: starRotate 5s -5s  infinite alternate;
+}
+.toy4{
+	width: 111px;
+	height: 260px;
+    left: 10%;
+    transform: rotateZ(0deg);
+	background-image: url("../../images/matches/toy4.png");
+	animation: starRotate 5s -5s  infinite alternate;
+}
 @keyframes starRotate{
 	0%{transform: rotateZ(10deg);}
 	100%{transform: rotateZ(-10deg);}
 }
+.dateChangeCheck{
+	position: absolute;
+	top: -33px;
+    width: 1px;
+}
+.dateChange{
+	display: inline-block;
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+	background-color: #fff;
+	box-shadow: 0 2px 2px 1px #ccc inset;
+	position: relative;
+	top: 10%;
+}
+.dateChange .dateChangeIn{
+	display: inline-block;
+	width: 38px;
+	height: 38px;
+	/*background-color: #afddeb;*/
+	background-image: url("../../images/matches/sun.png");
+	background-size: cover;
+	box-shadow: 0 2px 0px 0px #ccc;
+	border-radius: 50%;
+	position: absolute;
+	top: 0px;
+	left: 1px;
+	transition: .5s;
+}
+.dateChangeCheck:checked ~ .dateChange .dateChangeIn{
+	left: 61px;
+	background-image: url("../../images/matches/night.png");
+}
+/*============rwd===============*/
+@media screen and (max-width:767px){
+	div[class^="person"]{
+		display: none;
+	}
+	.front_end, .back_end {
+	    width: 200px;
+	    height: 120px;
+	    position: absolute;
+	    top: 20vh;
+	    /* bottom: 0; */
+	    left: -60%;
+	    right: 0;
+	    margin: auto;
+	    cursor: pointer;
+	    animation: entry2 3s infinite alternate; 
+	}
+	.back_end{
+		left: 49%;
+		animation: entry2 3s -3s infinite alternate;
+	}
+	.front_end .title, .back_end .title {
+	    width: 60px;
+	    background-color: #ffda7d;
+	    color: #f97c00;
+	    padding: 10px;
+	    font-size: 20px;
+	    border-radius: 20px;
+	    position: absolute;
+	    bottom: -35px;
+	    z-index: 3;
+	    left: 50%;
+	    margin-left: -40px;
+	    /* transition: 1s .5s; */
+	}
+	@keyframes entry2{
+		0%{top: 20vh;}
+		100%{top: 40vh;}
+	}
+	.toy1, .toy2, .toy3, .toy4 {
+	    width: 30px;
+	    height: 85px;
+	    left: 20%;
+	}
+	.toy2{
+		width: 55px;
+	    height: 100px;
+	    left: 60%;
+	}
+	.toy3 {
+	    width: 30px;
+	    height: 115px;
+	    left: 85%;
+	}
+	.toy4 {
+	    width: 55px;
+	    height: 130px;
+	    left: 0%;
+	}
+	.star1, .star2, .star3, .star4 {
+	    width: 42px;
+	    height: 99px;
+	    left: 20%;
+	}
+	.star2 {
+	    width: 42px;
+	    height: 113px;
+	    left: 60%;
+	}
+	.star3 {
+	    width: 42px;
+	    height: 150px;
+	    left: 0%;
+	}
+	.star4 {
+	    width: 42px;
+	    height: 135px;
+	    left: 85%;
+	}
+	.dateChange {
+	    width: 60px;
+	    height: 30px;
+	    top: 1%;
+	}
+	.dateChange .dateChangeIn {
+	    width: 28px;
+	    height: 28px;
+	    transition: .5s;
+	}
+	.dateChangeCheck:checked ~ .dateChange .dateChangeIn{
+		left:31px;
+	}
+}
+
 

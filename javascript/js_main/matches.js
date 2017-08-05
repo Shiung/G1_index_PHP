@@ -9,39 +9,43 @@
 // });
 
 $(document).ready(function(){
-
-	$(".matches").on('mousemove',function(e){
-		var w = $(window).width();
-		var h = $(window).height();
-		var offsetX = 0.5 - e.pageX /w;
-		var offsetY = 0.5 - e.pageY / h;
-		$(".parallax").each(function(i,el){
-			var offset = parseInt($(el).data("offset"));
-			var translate ="translate3d("+Math.round(offsetX*offset)+"px,"+Math.round(offsetY*offset)+"px,0px)";
-			// console.log($(el));
-			$(el).css({
-							'-webkit-transform':translate,
-							'transform':translate,
-							'moz-transform':translate
-						});
+	if($(window).width()>767){
+		$(".matches").on('mousemove',function(e){
+			var w = $(window).width();
+			var h = $(window).height();
+			var offsetX = 0.5 - e.pageX /w;
+			var offsetY = 0.5 - e.pageY / h;
+			$(".parallax").each(function(i,el){
+				var offset = parseInt($(el).data("offset"));
+				var translate ="translate3d("+Math.round(offsetX*offset)+"px,"+Math.round(offsetY*offset)+"px,0px)";
+				// console.log($(el));
+				$(el).css({
+								'-webkit-transform':translate,
+								'transform':translate,
+								'moz-transform':translate
+							});
+			});
 		});
-	});
 
-	$(".entryButton").hover(function(){
-		$(this).css({animationPlayState: "paused"});
-	},function(){
-		$(this).css({animationPlayState: "running"});
-	});
 
-	$(".logoBack").click(function(){
-		var a =$(this).children('img').attr("src");
-		// console.log(a.match("night"),a.match("sun"));
-		if(a.match("night") != null){
+		$(".entryButton").hover(function(){
+			$(this).css({animationPlayState: "paused"});
+		},function(){
+			$(this).css({animationPlayState: "running"});
+		});
+	}
+
+	$(".dateChange").click(function(){
+		var a =$(this).siblings("input");
+		// console.log(a.prop("checked"));
+		if(a.prop("checked") != true){
 			$(".matches").css("backgroundImage","linear-gradient(to bottom, #473657, #3195e8)");
-			$(this).children('img').attr("src","images/matches/sun.png");
+			$(".star").fadeIn("slow");
+			$(".toy").fadeOut(0);
 		}else{
 			$(".matches").css("backgroundImage","linear-gradient(to bottom, #2caeff, #69ffb7)");
-			$(this).children('img').attr("src","images/matches/night.png");
+			$(".toy").fadeIn("slow");
+			$(".star").fadeOut(0);
 		}
 	});
 
