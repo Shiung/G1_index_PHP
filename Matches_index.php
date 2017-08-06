@@ -15,6 +15,9 @@ session_start();
 	<script src="javascript/js_index/slick.js"></script>
 	<script src="javascript/js_index/sweetalert-dev.js"></script>
 	<!-- ========/index================= -->
+	<!-- =========loading============ -->
+	<script src="javascript/loadingJS.js"></script>
+	<!-- =========/loading============ -->
 	<!-- ============header=================== -->
 	<script src="javascript/script.js"></script>
 	<!-- ============/header=================== -->
@@ -28,6 +31,9 @@ session_start();
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/public.css">
 	<!-- =======/共用======= -->
+	<!-- =========loading============ -->
+	<link rel="stylesheet" type="text/css" href="css/loadingCss.css">
+	<!-- =========/loading============ -->
 	<!-- =========index============ -->
 	<link rel="stylesheet" type="text/css" href="css/css_index/jquery.fullPage.css">
 	<link rel="stylesheet" type="text/css" href="css/css_index/Mathes_index.css">
@@ -47,7 +53,11 @@ require_once("modules/header.html");
 <!-- head over -->
 <!-- =================/header==================== -->
 
+<!-- loading -->
+<?php require_once('loading.php'); ?>
+<!-- /loading -->
 
+<!-- 首頁內容 -->
 <div class="sectionAll">
 	<div id="fullpage">
 		<div class="section s1">

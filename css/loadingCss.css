@@ -1,0 +1,151 @@
+#loading{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #83E0FF;
+	z-index: 101;
+}
+#loading .loadbg{
+	width: 60vw;
+	height: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin:auto; 
+	text-align: center;
+}
+.loadgirl{
+	display: inline-block;
+	width: 50px;
+	position: absolute;
+	right: 0;
+	bottom: 50%;
+	animation: girl 5s both;
+}
+.loadboy{
+	display: inline-block;
+	width: 55px;
+	position: absolute;
+	left: 0;
+	bottom: 50%;
+	animation: boy 5s both;
+}
+.loadboy img,.loadgirl img{
+	width: 100%;
+}
+.loadbar{
+	width: 100%;
+	height: 6%;
+	background-color: #fff;
+	position: absolute;
+	bottom: 42%;
+	border-radius: 40px;
+}
+.barboy{
+	width: 10%;
+	height: 70%;
+	border-radius: 22px;
+	background-color: #6FB9FF;
+	position: absolute;
+	top: 0;
+	/*right: 0;*/
+	bottom: 0;
+	left: 1%;
+	margin: auto;
+	animation: boybar 5s both;
+
+}
+.bargirl{
+	width: 10%;
+	height: 70%;
+	border-radius: 22px;
+	background-color: #FDAFFF;
+	position: absolute;
+	top: 0;
+	right: 1%;
+	bottom: 0;
+	/*left: 5px;*/
+	margin: auto;
+	animation: girlbar 5s both;
+}
+.matchbarMix{
+	width: 98.5%;
+	height: 22px;
+	border-radius: 22px;
+	background-image: linear-gradient(90deg,#6FB9FF 40%,#FDAFFF 57%);
+	/*background-color: #FDAFFF;*/
+	position: absolute;
+	top: 0;
+	right: 1%;
+	bottom: 0;
+	/*left: 5px;*/
+	margin: auto;
+}
+
+.loadbg .loadScroll{
+	display: block;
+	position: absolute;
+	bottom:0;
+	top: 30%;
+	left: 0;
+	right: 0;
+	margin:auto; 
+	color: #666;
+	height: 15px;
+	overflow: hidden;
+}
+.loadbg .loadScroll ul li{
+	line-height: 16px;
+}
+
+
+@keyframes boy{
+	0%{left: 1%;}
+	100%{left: 25%;}
+}
+@keyframes girl{
+	0%{right: 1%;}
+	100%{right: 25%;}
+}
+
+@keyframes boybar{
+	0%{width: 10%}
+	100%{width: 49%}
+}
+@keyframes girlbar{
+	0%{width: 10%;}
+	100%{width: 49%}
+}
+
+
+
+@media screen and (min-width: 768px){
+
+	#loading .loadbg{
+		width: 35%;
+		height: 50%;
+	}
+
+	.loadgirl{
+		width: 100px;
+	}
+	.loadboy{
+		width: 110px;
+	}
+	.loadbar{
+		width: 100%;
+		height: 30px;
+	}
+	.barboy{
+		width: 10%;
+		height: 22px;
+	}
+	.bargirl{
+		width: 10%;
+		height: 22px;
+	}
+}
