@@ -90,16 +90,15 @@
 	display: block;
 	position: absolute;
 	bottom:0;
-	top: 30%;
+	top: 35%;
 	left: 0;
 	right: 0;
 	margin:auto; 
 	color: #666;
-	height: 15px;
+	font-size: 16px;
+	line-height: 21px;
+	height: 40px;
 	overflow: hidden;
-}
-.loadbg .loadScroll ul li{
-	line-height: 16px;
 }
 
 
@@ -147,5 +146,13 @@
 	.bargirl{
 		width: 10%;
 		height: 22px;
+	}
+	.loadbg .loadScroll{
+		top: 30%;
+		color: #666;
+		height: 16px;
+		font-size: 16px;
+		line-height: 16px;
+		overflow: hidden;
 	}
 }
