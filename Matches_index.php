@@ -377,7 +377,12 @@ require_once("modules/header.html");
 						</div>
 						<div class="action1_back">
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
-							<div class="actionNumberTitle1">報名人數:<span class="actionNumber1 an">50</span>/<span class="actionNumberLimit1 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
+							<div class="actionNumberTitle1">報名人數:<span class="actionNumber1 an"><?php 
+								$sql = "select count(*) from sign where ACT_no=1";
+								$num = $pdo->query($sql);
+								$numRow=$num->fetchColumn(0);
+								echo "$numRow"+"50"	;
+							 ?></span>/<span class="actionNumberLimit1 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar1"><div class="controlBar1 cb"></div></div>
 							<p>一年一度的七夕情人節到了，你是否想好要送另一半什麼了呢?如果沒有另一半，也不用太傷心唷，在Matches你可以在線上找到契合的好友，與你一同參加七夕交換禮物活動，今年的七夕就來點不一樣的吧 !</p>
 							<div class="actionGo1"><a href="act.php">報名活動</a></div>
@@ -395,7 +400,12 @@ require_once("modules/header.html");
 						</div>
 						<div class="action2_back">
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
-							<div class="actionNumberTitle2">報名人數:<span class="actionNumber2 an">20</span>/<span class="actionNumberLimit2 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
+							<div class="actionNumberTitle2">報名人數:<span class="actionNumber2 an"><?php 
+								$sql = "select count(*) from sign where ACT_no=2";
+								$num = $pdo->query($sql);
+								$numRow=$num->fetchColumn(0);
+								echo "$numRow"+"30"	;
+							 ?></span>/<span class="actionNumberLimit2 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar2"><div class="controlBar2 cb"></div></div>
 							<p>你是超級邊緣人嗎?還是活了20年沒收過生日禮物呢?沒關係，在Matches只要是當月壽星就可以跟你同月生日的好友一同慶生還等什麼呢? 脫離邊緣人就是今天 !</p>
 							<div class="actionGo2"><a href="act.php">報名活動</a></div>
@@ -414,7 +424,12 @@ require_once("modules/header.html");
 						</div>
 						<div class="action3_back">
 							<h3><?php echo $actRow["ACT_name"]; ?></h3>
-							<div class="actionNumberTitle3">報名人數:<span class="actionNumber3 an">70</span>/<span class="actionNumberLimit3 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
+							<div class="actionNumberTitle3">報名人數:<span class="actionNumber3 an"><?php 
+								$sql = "select count(*) from sign where ACT_no=3";
+								$num = $pdo->query($sql);
+								$numRow=$num->fetchColumn(0);
+								echo "$numRow"+"70"	;
+							 ?></span>/<span class="actionNumberLimit3 anl"><?php echo $actRow["ACT_limit"]; ?></span></div>
 							<div class="actionBar3"><div class="controlBar3 cb"></div></div>
 							<p>哈利波特慶周年啦~各種波特迷嗨起來吧!這次Matches的哈利波特交換禮物活動限定了只能送跟電影情節有關的禮物喔交換過程還可以認識共同興趣的好友!超級波特迷，千萬不要錯過啊~</p>
 							<div class="actionGo3"><a href="act.php">報名活動</a></div>
@@ -445,19 +460,19 @@ require_once("modules/header.html");
 					<div>
 						<img src="images/img_index/action1.png">
 						<h3  class="rwdTit" style="display: none;"><!-- 七夕情人節活動 --></h3>
-						<div class="rwdCNum" style="display: none;">50</div>
+						<div class="rwdCNum" style="display: none;"><!-- 50 --></div>
 						<div class="rwdCLimt" style="display: none;"><!-- 80 --></div>
 					</div>
 					<div>
 						<img src="images/img_index/action2.png">
 						<h3 class="rwdTit" style="display: none;"><!-- 當月壽星活動 --></h3>
-						<div class="rwdCNum" style="display: none;">20</div>
+						<div class="rwdCNum" style="display: none;"><!-- 20 --></div>
 						<div class="rwdCLimt" style="display: none;"><!-- 50 --></div>
 					</div>
 					<div>
 						<img src="images/img_index/action3.png">
 						<h3 class="rwdTit" style="display: none;"><!-- 哈利波特週年活動 --></h3>
-						<div class="rwdCNum" style="display: none;">70</div>
+						<div class="rwdCNum" style="display: none;"><!-- 70 --></div>
 						<div class="rwdCLimt" style="display: none;"><!-- 100 --></div>
 					</div>
 				</section>

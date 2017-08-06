@@ -1144,6 +1144,12 @@ $(".sexcheck").click(function(){
 		$('.rwdCLimt:eq(3)').text(defaultCB);
 		$('.rwdCLimt:eq(4)').text(defaultCC);
 
+		var defaultDB=$(".action2_back").children(".actionNumberTitle2").children(".actionNumber2").text();	
+      	var defaultDC=$(".action3_back").children(".actionNumberTitle3").children(".actionNumber3").text();
+		$(".rwdCNum:eq(2)").text(defaultB);
+		$(".rwdCNum:eq(3)").text(defaultDB);
+		$(".rwdCNum:eq(4)").text(defaultDC);
+
 			// =======活動進度條slick之後========
 		$(".center").on("afterChange",function(index){
 			// console.log($(".slick-current").children("h3").text());
