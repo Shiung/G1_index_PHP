@@ -1817,8 +1817,23 @@
 				background-color: rgba(251,176,59,1);
 			}
 			.s6 .content6 .present-floor5 h3{
-				margin: 40px 0;
-				color: #fff;
+				margin: 25px 0;
+			    color: #fff;
+			    font-size: 20px;
+			}
+			.s6 .content6 .present-floor5 .ab div[class$="back"] p{
+				display: block;
+			    width: 80%;
+			    padding: 0 10%;
+			    font-size: 15px;
+			    margin-bottom: 15px;
+			    margin-top: 0;
+			    text-align: left;
+			    line-height: 25px;
+			    color: #666;
+			}
+			.s6 .content6 .present-floor5 .ab:nth-of-type(2) div[class$="back"] p{
+				color:#444;
 			}
 			.s6 .content6 .present-floor5 .action1_back .actionBar1,.s6 .content6 .present-floor5 .action2_back .actionBar2,.s6 .content6 .present-floor5 .action3_back .actionBar3{
 				width: 80%;
