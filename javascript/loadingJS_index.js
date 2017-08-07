@@ -16,7 +16,10 @@ $(document).ready(function(){
 
 
 		$('#loading').delay(5000).fadeOut();
+		storage.setItem("entryCount",1);
+	}else{
+			$('#loading').fadeOut(0);
 	}
-	$('#loading').fadeOut(0);
-	storage.setItem("entryCount",1);
+
+	
 });
