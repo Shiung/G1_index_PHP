@@ -16,7 +16,7 @@ session_start();
 	<script src="javascript/js_index/sweetalert-dev.js"></script>
 	<!-- ========/index================= -->
 	<!-- =========loading============ -->
-	<script src="javascript/loadingJS.js"></script>
+	<script src="javascript/loadingJS_index.js"></script>
 	<!-- =========/loading============ -->
 	<!-- ============header=================== -->
 	<script src="javascript/script.js"></script>
@@ -53,7 +53,7 @@ require_once("modules/header.html");
 <!-- head over -->
 <!-- =================/header==================== -->
 
-<!-- loading -->
+<!-- loading -->		
 <?php require_once('loading.php'); ?>
 <!-- /loading -->
 
