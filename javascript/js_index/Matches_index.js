@@ -1156,10 +1156,12 @@ $(".sexcheck").click(function(){
 			var a=$(".slick-current").children(".rwdTit").text();
 			var b=$(".slick-current").children(".rwdCNum").text();
 			var c=$(".slick-current").children(".rwdCLimt").text();
+			var d=$(".slick-current").children(".rwdAnchorTrue").attr("href");
 			$("#currentTitle").text(a);
 			$(".rwdCurentNum").text(b);
 			$(".rwdCurentLimit").text(c);
 			$(".CNBarTrue").css("width",b/c*98+"%");
+			$(".rwdAnchor").attr("href",d);
 		})
 	}
 
