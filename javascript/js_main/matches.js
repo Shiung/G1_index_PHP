@@ -50,4 +50,22 @@ $(document).ready(function(){
 	});
 
 
+
+	// ===白天黑頁字動切換=======
+
+	var date = new Date();
+	console.log(date.getHours());
+	if(date.getHours()>6 && date.getHours()<18){
+		$(".dateChangeCheck").prop("checked",false);
+		$(".matches").css("backgroundImage","linear-gradient(to bottom, #2caeff, #69ffb7)");
+		$(".star").fadeOut(0);
+		$(".toy").fadeIn(0);
+	}else{
+		$(".dateChangeCheck").prop("checked",true);
+		$(".matches").css("backgroundImage","linear-gradient(to bottom, #473657, #3195e8)");
+		$(".toy").fadeOut(0);
+		$(".star").fadeIn(0);
+	}
+
+
 });
